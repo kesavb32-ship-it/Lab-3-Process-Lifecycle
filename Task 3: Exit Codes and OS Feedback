@@ -1,0 +1,118 @@
+# Task 3: Exit Codes and OS Feedback
+
+## Objective
+
+To demonstrate how a C program communicates success or failure to the operating system using exit codes.
+
+## 1. C Source Code
+
+
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter a number (positive for success, negative for fail): ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("Success\n");
+        return 0; // Tell OS: Success
+    } else {
+        printf("Failure\n");
+        return 1; // Tell OS: Error
+    }
+}
+```
+
+## 2. Compilation
+
+Compile the program:
+
+```bash
+gcc task3.c -o task3
+```
+
+## 3. Execution and Verification
+
+### Scenario A: Positive Input
+
+Run the program:
+
+```bash
+./task3
+```
+
+Enter:
+
+```text
+5
+```
+
+Expected output:
+
+```text
+Enter a number (positive for success, negative for fail): 5
+Success
+```
+
+Check the exit status:
+
+```bash
+echo $?
+```
+
+Expected result:
+
+```text
+0
+```
+
+### Scenario B: Negative Input
+
+Run the program again:
+
+```bash
+./task3
+```
+
+Enter:
+
+```text
+-5
+```
+
+Expected output:
+
+```text
+Enter a number (positive for success, negative for fail): -5
+Failure
+```
+
+Check the exit status:
+
+```bash
+echo $?
+```
+
+Expected result:
+
+```text
+1
+```
+
+## 4. Expected Result
+
+- Positive input returns exit status `0` (Success).
+- Zero or negative input returns exit status `1` (Failure).
+
+## 5. Screenshots
+
+Include the following screenshots:
+
+- Positive input with exit status `0`
+- Negative input with exit status `1`
+
+## 6. Learning Outcome
+
+Learned how C programs communicate their execution results through exit codes and how to verify them using the Linux shell.
