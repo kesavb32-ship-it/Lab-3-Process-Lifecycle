@@ -1,0 +1,125 @@
+# Task 5: Conditional Execution and Termination
+
+## Objective
+
+To demonstrate how conditional statements control program execution and termination based on user input.
+
+## 1. C Source Code
+
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    int choice;
+
+    // Print PID at start
+    printf("Current PID: %d\n", getpid());
+
+    printf("Do you want to continue? (1 for Yes, 0 for No): ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        printf("Continuing...\n");
+        sleep(5);
+        return 0; // Success
+    } else {
+        printf("Exiting...\n");
+        return 1; // Failure/Abort
+    }
+}
+```
+
+## 2. Compilation
+
+Compile the program:
+
+```bash
+gcc task5.c -o task5
+```
+
+## 3. Execution and Verification
+
+### Scenario A: Choose Yes
+
+Run the program:
+
+```bash
+./task5
+```
+
+Enter:
+
+```text
+1
+```
+
+Expected output:
+
+```text
+Current PID: 2013
+Do you want to continue? (1 for Yes, 0 for No): 1
+Continuing...
+```
+
+Check the exit status:
+
+```bash
+echo $?
+```
+
+Expected result:
+
+```text
+0
+```
+
+### Scenario B: Choose No
+
+Run the program again:
+
+```bash
+./task5
+```
+
+Enter:
+
+```text
+0
+```
+
+Expected output:
+
+```text
+Current PID: 2014
+Do you want to continue? (1 for Yes, 0 for No): 0
+Exiting...
+```
+
+Check the exit status:
+
+```bash
+echo $?
+```
+
+Expected result:
+
+```text
+1
+```
+
+## 4. Expected Result
+
+- Input `1` continues execution, waits five seconds, and returns exit status `0`.
+- Input `0` follows the exit branch and returns exit status `1`.
+
+## 5. Screenshots
+
+Include the following screenshots:
+
+- Input `1` with exit status `0`
+- Input `0` with exit status `1`
+
+## 6. Learning Outcome
+
+Learned how conditional statements control program execution and how exit codes communicate the final program status to the operating system.
