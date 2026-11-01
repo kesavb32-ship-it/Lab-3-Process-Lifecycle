@@ -17,11 +17,11 @@ This laboratory explores how C programs interact with the Linux operating system
 
 | Task | Topic | Source Code |
 |---|---|---|
-| Task 1 | Long-Running Process | `task1_alive.c` |
-| Task 2 | Process Identity (PID and PPID) | `task2_identity.c` |
-| Task 3 | Exit Codes and OS Feedback | `task3_exit.c` |
-| Task 4 | Standard I/O Streams | `task4_input.c` |
-| Task 5 | Conditional Execution and Termination | `task5_control.c` |
+| Task 1 | Long-Running Process | `task1.c` |
+| Task 2 | Process Identity (PID and PPID) | `task2.c` |
+| Task 3 | Exit Codes and OS Feedback | `task3.c` |
+| Task 4 | Standard IO Streams | `task4.c` |
+| Task 5 | Conditional Execution and Termination | `task5.c` |
 
 ## Technologies Used
 
@@ -37,26 +37,21 @@ Lab-3-Process-Lifecycle/
 ├── README.md
 ├── Task-1-Long-Running-Process/
 │   ├── README.md
-│   ├── task1_alive.c
 │   └── screenshots/
 ├── Task-2-Process-Identity/
 │   ├── README.md
-│   ├── task2_identity.c
 │   └── screenshots/
 ├── Task-3-Exit-Codes/
 │   ├── README.md
-│   ├── task3_exit.c
 │   └── screenshots/
 ├── Task-4-Standard-IO/
 │   ├── README.md
-│   ├── task4_input.c
 │   └── screenshots/
 ├── Task-5-Conditional-Execution/
 │   ├── README.md
-│   ├── task5_control.c
 │   └── screenshots/
 ├── diagrams/
-└── docs/
+
 ```
 
 ## Learning Outcomes
