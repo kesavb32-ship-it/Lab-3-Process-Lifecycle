@@ -1,0 +1,86 @@
+# Task 2: Process Identity (PID and PPID)
+
+## Objective
+
+To identify the Process ID (PID) and Parent Process ID (PPID) of a running program using C.
+
+## 1. C Source Code
+
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    // Get current Process ID
+    pid_t my_pid = getpid();
+
+    // Get Parent Process ID
+    pid_t my_ppid = getppid();
+
+    printf("My PID is: %d\n", my_pid);
+    printf("My Parent PID is: %d\n", my_ppid);
+
+    printf("Sleeping for 20 seconds...\n");
+    sleep(20);
+
+    return 0;
+}
+```
+
+## 2. Compilation and Execution
+
+**Compile the program:**
+
+```bash
+gcc task2.c -o task2
+```
+
+**Run the program in the background:**
+
+```bash
+./task2 &
+```
+
+## 3. Process Verification
+
+Check the running process:
+
+```bash
+pgrep -a task2
+```
+
+Verify the PID and PPID using:
+
+```bash
+ps -p <PID> -o pid,ppid,cmd
+```
+
+Replace `<PID>` with the actual PID displayed by your program.
+
+## 4. Expected Output
+
+```text
+My PID is: 1980
+My Parent PID is: 1
+Sleeping for 20 seconds...
+```
+
+Example process verification:
+
+```text
+PID     PPID    CMD
+1980     1    ./task2
+```
+
+*Note: PID and PPID values will vary depending on the system.*
+
+## 5. Screenshots
+
+Include the following screenshots:
+
+- Program execution showing PID and PPID
+- Process verification using the `ps` command
+
+## 6. Learning Outcome
+
+Learned how to retrieve process identifiers and verify process information using Linux commands.
