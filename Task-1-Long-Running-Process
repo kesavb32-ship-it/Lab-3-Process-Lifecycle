@@ -1,0 +1,74 @@
+# Task 1: Long-Running Process
+
+## Objective
+To create a C program that runs for 30 seconds and monitor it as an active Linux process.
+
+## 1. C Source Code
+
+**Filename:** `task1_alive.c`
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    printf("I am starting...\n");
+
+    // Loop for 30 seconds
+    for(int i = 1; i <= 30; i++) {
+        sleep(1); // Pauses execution for 1 second
+    }
+
+    printf("I am finished.\n");
+    return 0;
+}
+```
+
+## 2. Compilation and Execution
+
+**Compile the program:**
+
+```bash
+gcc task1.c -o task1
+```
+
+**Run the program in the background:**
+
+```bash
+./task1 &
+```
+
+## 3. Process Monitoring
+
+Find the running process:
+
+```bash
+ps aux | grep '[t]ask1'
+```
+
+
+
+## 4. Expected Output
+
+**Program output:**
+
+```text
+I am starting...
+I am finished.
+```
+
+**Process monitoring output:**
+
+The `ps` command displays information about the active `task1` process, including its PID, CPU usage, memory usage, and execution status.
+
+## 5. Screenshots
+
+Include the following screenshots:
+
+
+- Compilation and background execution
+- Running process verification using `ps`
+
+## 6. Learning Outcome
+
+Learned how to execute a long-running process in the background and monitor it using Linux commands.
